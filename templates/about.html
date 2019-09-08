@@ -1,0 +1,298 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>offlinefarm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    {% comment %} <link rel="stylesheet" href="css/font-awesome.min.css"> {% endcomment %}
+    <style> 
+    #f {
+    background: #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    }
+    #f i {
+        color: #bdbdbd;
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    #f i:hover {
+        color: #787878;
+    }
+    html{
+    height: 100vh;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 4em;
+	line-height: 4em;
+}
+    </style>
+</head>
+<body>
+        <!-- Navbar panel -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">OfflineFarm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'home' %}">Главная <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{% url 'app' %}">Приложение</a>
+            <a class="nav-item nav-link" href="{% url 'delivery' %}">Доставка</a>
+            <a class="nav-item nav-link" href="{% url 'price' %}">Цены</a>
+            <a class="nav-item nav-link" href="{% url 'contacts' %}">Контакты</a>
+            <a class="nav-item nav-link" href="{% url 'about' %}">О нас</a>
+          </div>
+        </div>
+      </nav>
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-4 d-flex justify-content-center align-items-center" style="margin-top: 25vh;">
+                 <img src="https://sun9-7.userapi.com/c855016/v855016402/e6df7/2Psa2XtxDpg.jpg" class = "" id = "img"> {% comment %}{% static 'css/images.jpg' %} {% endcomment %}
+            </div>
+            <div class="col d-flex align-self-center justify-content-start">
+                <p style = "text-align: justify; font-size: 30px; margin-top: 30vh;">
+                    У нас было 20 часов чистого времени, 3 пачки сигарет, 6 человек и вкусный ужин, мы выживали как могли. <span style="color: #f27321"> Всем морковки!!! </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% comment %} <div class = "container" style = "margin-left: 17vw">
+        <div class="row bottom">
+            <div class="col-5">
+                <ul>
+                    <li>Телефон</li>
+                    <li style = "color: grey">8-499-999-99-99</li>
+                    <li style = "color: grey">8-900-999-99-99</li>
+                </ul>
+            </div>
+            <div class="col">
+                <li>Mail</li>
+                <li style = "color: grey">lalala@yandex.ru</li>
+                <li></li>
+            </div>
+            <div class="col">
+                <li>Социальные сети</li>
+                <div class="social youtube">
+                    <a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+                </div>
+                <div class="social instagram">
+                    <a href="#" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+                </div>
+                <div class="social vk">
+                    <a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    <footer id="f" class="footer">
+    <div class="container">
+    <div class="row ">
+            <a href="#"><i class="col fab fa-facebook-square"></i></a>
+            <a href="#"><i class="col fab fa-twitter"></i></a>
+            <a href="#"><i class="col fab fa-instagram"></i></a>
+            <a href="#"><i class="col fab fa-vk"></i></a>
+    </div>
+    </div>
+    </footer>
+
+            {% comment %} <footer id="f" class="d-flex align-items-end" style="">
+            <div class="container">
+                <div class="row text-center">
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                </div>
+            </div>
+        </footer> {% endcomment %}
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #img{
+            margin-top: 20vh;
+            padding: 10px;
+            background: white;
+            float: left;
+        }
+
+        p{
+            margin-top: 20vh;
+        }
+
+        .bottom{
+            margin-top: 15vh;
+        }
+
+        li{
+            list-style-type: none;
+        }
+        @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+        .social a {
+            text-align: center;
+            width: 46px;
+            height: 46px;
+            float: left;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1);
+            border-radius: 46px;
+            margin: 0 10px 10px 0;
+            padding: 6px;
+            color: #000;
+        }
+        .github a:hover {background: #191919; color: #fff;}
+        .youtube a:hover {background: #c4302b; color: #fff;}
+        .google-pluse a:hover {background: #DD4B39; color: #fff;}
+        .twitter a:hover {background: #00acee; color: #fff;}
+        .instagram a:hover {background: #3f729b; color: #fff;}
+        .facebook a:hover {background: #3b5998; color: #fff;}
+        .skype a:hover {background: #00aff0; color: #fff;}
+        .vk a:hover {background: #5d84ae; color: #fff;}
+        .odnoklassniki a:hover {background: #f93; color: #fff;}
+        .pinterest a:hover {background: #c8232c; color: #fff;}
+        .linkedin a:hover {background: #0e76a8; color: #fff;}
+        .telegram a:hover {background: #249bd7; color: #fff;}
+        .tumblr a:hover {background: #34526f; color: #fff;}
+        .windows a:hover {background: #125acd; color: #fff;}
+        .whatsapp a:hover {background: #50b154; color: #fff;}
+        .weibo a:hover {background: #d52b2b; color: #fff;}
+        .dropbox a:hover {background: #1087dd; color: #fff;}
+ 
+    </style>
+</head>
+<body style = "background-color: whitesmoke">
+    <div style="background-color: whitesmoke;">
+        <div class="container">
+                <div class="row navbar navbar-light">
+                    <div class="col">
+                        <nav class="navbar navbar-light bg-faded">
+                            <a class="navbar-brand" href="{% url 'home' %}" style = "font-size: 30px; font-weight: bolder">Navbar</a>
+                        </nav>
+                    </div>
+
+                    <div class = "d-flex justify-content-end">
+                        <div class="col nav navbar-nav">
+                            <a class="nav-item nav-link" href="{% url 'home' %}" style = "font-size: 18px">Home</a>
+                        </div>
+                        <div class="col nav navbar-nav">
+                            <a class="nav-item nav-link active" href="{% url 'about' %}" style = "font-size: 18px">About</a>
+                        </div>    
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-4 d-flex justify-content-center">
+                <img src="{% static 'css/images.jpg' %}" class = "rounded-circle" id = "img">
+            </div>
+            <div class="col d-flex align-self-center justify-content-start">
+                <p style = "text-align: justify">
+                    Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного 
+                    противника в камуфляжной форме Алиенов. В результате эффективной обороны и стремительной 
+                    контратаки многочисленная группа боевиков была смята и отброшена. Среди личного состава 
+                    потерь нет. Бойцы разведгруппы проявили недюжие навыки владения оружием. Особо отличился 
+                    в бою взводный Кудряшев&nbsp;М.А., грамотно использовавший человеческие ресурсы 
+                    своего взвода. В результате операции были захвачены элементы внеземной культуры, которые 
+                    переданы аналитической группе.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class = "container" style = "margin-left: 17vw">
+        <div class="row bottom">
+            <div class="col-5">
+                <ul>
+                    <li>Телефон</li>
+                    <li style = "color: grey">8-499-999-99-99</li>
+                    <li style = "color: grey">8-900-999-99-99</li>
+                </ul>
+            </div>
+            <div class="col">
+                <li>Mail</li>
+                <li style = "color: grey">uliyana@yandex.ru</li>
+                <li></li>
+            </div>
+            <div class="col">
+                <li>Социальные сети</li>
+                <div class="social youtube">
+                    <a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+                </div>
+                <div class="social instagram">
+                    <a href="#" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+                </div>
+                <div class="social vk">
+                    <a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html> {% endcomment %}

@@ -1,0 +1,278 @@
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+</head>
+
+<body>
+    <!-- Navbar panel -->
+    <!-- Navbar panel -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">OfflineFarm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{% url 'home' %}">Главная <span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{% url 'app' %}">Приложение</a>
+                <a class="nav-item nav-link" href="{% url 'delivery' %}">Доставка</a>
+                <a class="nav-item nav-link" href="{% url 'price' %}">Цены</a>
+                <a class="nav-item nav-link" href="{% url 'contacts' %}">Контакты</a>
+                <a class="nav-item nav-link" href="{% url 'about' %}">О нас</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="" style="">
+        <div class="" style="width: 100%; height: 50%;" id="mapContainer"></div>
+        <div class=""
+            style="width: 100%; height: 40%;border: 5px solid black; border-radius: 5px; background-image: url(https://sun9-20.userapi.com/c855328/v855328515/eb467/ZGZKUQJ1KSw.jpg);">
+            <div class="row" style="background-color: rgba(0, 0, 0, 0.4); height: 100%; color: white;">
+                <div class="col-md-6">
+                    <h2 style="font-weight: bold;  margin-left: 5%;">Мой огород</h2>
+                    <div style="margin-top: 20px;  margin-left: 5%;">
+                        <h4>Морковь</h4>
+                    </div>
+                    <div class="progress" style="width:50%;  margin-left: 5%;">
+                        <div class="progress-bar" role="progressbar" style="width: 83%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">83%</div>
+                    </div>
+                    <div style="margin-top: 20px;  margin-left: 5%;">
+                        <h4>Огурцы</h4>
+                    </div>
+                    <div class="progress" style="width:50%;  margin-left: 5%;">
+                        <div class="progress-bar" role="progressbar" style="width: 37%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">37%</div>
+                    </div>
+                    <div style="margin-top: 20px;  margin-left: 5%;">
+                        <h4>Арбузы</h4>
+                    </div>
+                    <div class="progress" style="width:50%;  margin-left: 5%;">
+                        <div class="progress-bar" role="progressbar" style="width: 56%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">56%</div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3" style="padding: 10px;">
+
+                    <h2 style="font-weight: bold;">Посадить</h2>
+                    <div class="dropdown" style="margin-top: 10px;">
+                        <a class="btn btn-secondary dropdown-toggle" style="min-width: 200px;" href="#" role="button"
+                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Овощи
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Овощи">
+                            <a class="dropdown-item" href="#">Морковь</a>
+                            <a class="dropdown-item" href="#">Помидор</a>
+                            <a class="dropdown-item" href="#">Огурец</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown" style="margin-top: 10px;">
+                        <a class="btn btn-secondary dropdown-toggle" style="min-width: 200px;" href="#" role="button"
+                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            Фрукты и ягоды
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="Фрукты и ягоды">
+                            <a class="dropdown-item" href="#">Арбуз</a>
+                            <a class="dropdown-item" href="#">Дыня</a>
+                            <a class="dropdown-item" href="#">Клубника</a>
+                        </div>
+
+
+                        <div class="dropdown" style="margin-top: 10px;">
+                            <a class="btn btn-secondary dropdown-toggle" style="min-width: 200px;" href="#"
+                                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Удобрения
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="Удобрения">
+                                <a class="dropdown-item" href="#">1 кат</a>
+                                <a class="dropdown-item" href="#">2 кат</a>
+                                <a class="dropdown-item" href="#">3 кат</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button href="" class="btn btn-primary" style="margin-top: 50px; min-width: 200px;" onclick="alert('Работы начались')">Засеять</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding: 10px;">
+                    <h2 style="font-weight: bold;">Камеры</h2>
+                    <img class="img-fluid img-thumbnail" src="https://psv4.userapi.com/c848332/u366556072/docs/d13/be97d352bafa/OIUFID1-_preobrazovanny.gif?extra=zSn3dhD5Mm3uuWEy1dz6qRUBy2cJdzSfjr_Znutj72YB835JnIx2hKxkPMu2yhUjXYeaCiod1O2h8zQ-q0XdFn4-rux1oeHlPWzdK4R7DiN4cqcQikRn5Sa6EHieZQis9tUtszbGb6ucu4LStgplWOzuzA" alt="" style="height: 50%;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+
+        function testObjectsEvents(map, logEvent) {
+            // Let's create the same style for all objects
+            var style = {
+                fillColor: 'rgba(35, 51, 129, 0.3)',
+                lineWidth: 1,
+                strokeColor: 'rgba(114, 38, 51, 1)'
+            };
+
+
+
+            var customStyle = {
+                strokeColor: 'black',
+                fillColor: 'rgba(255, 255, 255, 0.5)',
+                lineWidth: 1,
+                lineCap: 'square',
+                lineJoin: 'bevel'
+            };
+
+            // Create a rectangle and pass the custom style as an options parameter:
+            var rect = new H.map.Rect(new H.geo.Rect(44.9313112, 39.5985862, 44.9313192, 39.5985722),
+                { style: customStyle });
+
+            rects = [];
+
+            const metr = 0.0000040;
+            var xy = 0;
+
+            for (let x = 0; x < 10; x++) {
+                for (let y = 0; y < 10; y++) {
+                    rects[xy] = new H.map.Rect(new H.geo.Rect(
+                        44.9313112 + x * metr, 39.5985761 + y * metr, 44.9313151 + x * metr, 39.5985722 + y * metr
+
+                    ), { style: style });
+                    //console.log(44.9313112+x*metr, 39.5985761+y*metr, 44.9313151+x*metr, 39.5985722+y*metr);
+                    xy++;
+                }
+            }
+
+
+            // Create a standard marker
+            var standardMarker = new H.map.Marker(new H.geo.Point(44.9313112 + metr * 10, 39.5985761 + metr * 10));
+
+            // Let's give names to our objects and save it as data
+            rect.setData('Rect');
+            for (let i = 0; i < 100; ++i) {
+                rects[i].setData('Rect');
+            }
+
+            // Now lets add out objects to the container for the conviniece of use
+            var container = new H.map.Group({
+                objects: [standardMarker]//, circle, polyline, polygon, standardMarker, imageMarker]
+            });
+
+            container.addObjects(rects);
+
+
+
+
+            // Create a style object:
+
+            // container.addObject(standardMarker);
+            // container.addObject(rectangles[0]);
+            // container.addObject(test);
+
+            //debugger;
+
+            // Subscribe to different events on every object
+            // rect.addEventListener('pointerenter', logEvent);
+            // rect.addEventListener('pointerdown', logEvent);
+
+            // container.addEventListener('pointerenter', logEvent);
+            container.addEventListener('pointerdown', logEvent);
+
+            // circle.addEventListener('pointermove', logEvent);
+            // circle.addEventListener('pointerup', logEvent);
+            // polyline.addEventListener('pointermove', logEvent);
+            // polygon.addEventListener('tap', logEvent);
+            // polygon.addEventListener('longpress', logEvent);
+            standardMarker.addEventListener('tap', logEvent);
+            standardMarker.addEventListener('pointerleave', logEvent);
+            // imageMarker.addEventListener('pointerenter', logEvent);
+            // imageMarker.addEventListener('pointerleave', logEvent);
+            // imageMarker.addEventListener('dbltap', logEvent);
+
+            // Add all of the above created map objects to the map's object collection
+            // so they will be rendered onto the map.
+            map.addObject(container);
+        }
+
+
+        var platform = new H.service.Platform({
+            apikey: 'mE18nmx9S71LzGns9vGTRYgpDnXfG4AUj9y3vIMzin0'
+        });
+        var defaultLayers = platform.createDefaultLayers();
+
+        // Step 2: initialize a map
+        var map = new H.Map(document.getElementById('mapContainer'), defaultLayers.vector.normal.map, {
+            // initial center and zoom level of the map
+            center: new H.geo.Point(44.931513, 39.599295),
+            zoom: 15,
+            pixelRatio: window.devicePixelRatio || 1
+        });
+        // add a resize listener to make sure that the map occupies the whole container
+        window.addEventListener('resize', () => map.getViewPort().resize());
+
+        // Step 3: make the map interactive
+        // MapEvents enables the event system
+        // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+        var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+        // Step 4: Create the default UI:
+        var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+
+        // Step 5: create custom logging facilities
+        var logContainer = document.createElement('ul');
+        logContainer.className = 'log';
+        logContainer.innerHTML = 'Try clicking on elements';
+        //map.getElement().appendChild(logContainer);
+        console.log(logContainer)
+
+        // Helper for logging events
+        function logEvent(evt) {
+            var entry = document.createElement('li');
+            entry.className = 'log-entry';
+            entry.textContent = ['event "', evt.type, '" @ ' + evt.target.getData()].join('');
+            logContainer.insertBefore(entry, logContainer.firstChild);
+
+            console.log(evt.type + ' ' + evt.target.getData())
+
+
+        }
+
+        // Step 6: main logic goes here
+        testObjectsEvents(map, logEvent);
+
+    </script>
+</body>
+
+</html>
