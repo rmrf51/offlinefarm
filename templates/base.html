@@ -23,8 +23,8 @@
     {% else %}
         <p>You are not logged in</p>
         <a href="http://127.0.0.1:8000/admin/login/?next=/admin/">ADMIN LOGIN</a> |
-        <a href="{% url 'account_login' %}">Log In</a> |
-        <a href="{% url 'account_signup' %}">Sign Up</a>
+        {% comment %} <a href="{% url 'account_login' %}">Log In</a> |
+        <a href="{% url 'account_signup' %}">Sign Up</a> {% endcomment %}
     {% endif %}
 </header>
 <main>
