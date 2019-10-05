@@ -1,50 +1,35 @@
-<!-- templates/home.html -->
 {% extends 'base.html' %}
+{% block title %}
+    Home
+{% endblock title %}
 
 {% block content %}
+    <h1>Home</h1>
 
-        <h1 class="my-4 d-flex justify-content-center">Овощи и фрукты
-          <small> с вашего огорода (шашлыки делать нельзя)</small>
-        </h1>
-        <img src="https://sun9-2.userapi.com/c855328/v855328515/eb49d/vE65avmQfpQ.jpg" class="image-fluid" style="margin: 5%;">
+    <a href='{% url "account_change_password" %}'>Поменять пароль</a>
 
 
-        <div class="d-flex justify-content-center row">
-        
-  {% for post in object_list %}
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col" class="text-truncate">Author</th>
+                <th scope="col" class="text-truncate">Title</th>
+                <th scope="col" class="text-truncate">Add Review</th>
+                <th scope="col" class="text-truncate">Read</th>
+            </tr>
+            </thead>
+            <tbody>
 
-    {% comment %} <div class="container-fluid" style="background-color: teal;">      
-        <div class="row">
-            <div class = "col-md-6 d-flex justify-content-center">
-                <img class = "mb-4 mt-4 img-fluid" src = "{{ post.cover.url }}">
-            </div>
-            <div class = "col-md-6">
-                <div>
-                    <h1 class = "mb-4 mt-4 mr-4" style = "color: whitesmoke; text-align: justify;">{{ post.title }}</a>
-                </div>
-                <div class = "d-flex justify-content-center">
-                    <a href = "{% url 'post_detail' post.pk %}" class="btn btn-outline-light" style = "color: whitesmoke;"  role="button" aria-pressed="false">Learn more</a>
-                </div>  
-            </div>
-        </div>
-    </div> {% endcomment %}
-
-    
-        <!-- Blog Post -->
-        <div class="card mb-4 col-md-6 ">
-          <img class="card-img-top" src="{{ post.cover.url }}" alt="Card image cap" style="max-height: 50vh; width: auto">
-          <div class="card-body">
-            <h2 class="card-title">{{ post.title }}</h2>
-            <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          {% comment %} <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-          </div> {% endcomment %}
-        </div>
-
-
-  {% endfor %}
-
-  </div>
+            {% for object in object_list %}
+                <tr>
+                    <td class="text-truncate">{{ object.author }}</td>
+                    <td class="text-truncate">{{ object.title }}</td>
+                    <td class="text-truncate"><a href="">add review</a></td>
+                    <td class="text-truncate">{{ object.if_read }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock content %}
