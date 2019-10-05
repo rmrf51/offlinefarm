@@ -6,8 +6,9 @@
 {% block content %}
     <h1>Home</h1>
 
-    <a href="{% url 'account_change_password' %}">Поменять пароль</a>
-
+    {% comment %} <a href="{% url 'account_change_password' %}">Поменять пароль</a> {% endcomment %}
+    
+    <a href="https://offlinefarm.herokuapp.com/accounts/password/change/">Поменять пароль</a>
 
     <div class="container">
         <table class="table">
